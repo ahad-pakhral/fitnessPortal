@@ -1,0 +1,117 @@
+:root {
+    --color-1: #4A171E;
+    --color-2: #E2B143;
+    --icon-color: #ACFFFF;
+    --text-color: #fff;
+}
+body {
+    background: linear-gradient(63.08deg, var(--color-1) -38.12%, var(--color-2) 154.35%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(138.38% 138.38% at 96.82% 0%, rgba(255, 255, 255, 0.63) 0%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 45px 4px 29px -31px rgba(0, 0, 0, 0.29);
+    border-radius: 0 19px 10px 0;
+    border-right: 1px solid #fff;
+    text-align: center;
+    padding-top: 10px;
+}
+.logo p {
+    font-family: 'Lexend Tera', sans-serif;
+    color: var(--text-color);
+    font-size: 40px;
+}
+.sb-links-ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.sb-links-ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 8px 0 8px 24%;
+}
+.sb-links-ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.sb-links-ul li:first-child a {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.bic {
+    height: 30px;
+    width: 30px;
+    font-size: 23px;
+    color: var(--icon-color);
+}
+.db-page {
+    position: relative;
+    height: 100vh;
+}
+.mc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-height: 800px;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+.mc:hover {
+    transform: translate(-50%,-50%) rotate(-10deg);
+}
+.mc:hover~img {
+    transform: translate(-46%,-50%) rotate(-10deg);
+}
+.mc-shadow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-46%,-50%);
+    transition: all 0.3s ease;
+}
+.head {
+    font-family: 'Lexend Tera';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 87px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-shadow: 20px 27px 20px rgba(0, 0, 0, 0.29);
+    position: absolute;
+}
+.head-1 {
+    top: 30%;
+    left: 30%;
+    z-index: 4;
+}
+.head-2 {
+    z-index: 2;
+    top: 45%;
+    left: 64%;
+}
+.head-3 {
+    z-index: 4;
+    top: 60%;
+    left: 28%;
+}
