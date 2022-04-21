@@ -9,11 +9,55 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    position: relative;
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* COLORS */
+.colors {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 6;
+}
+.color input {
+    display: none;
+}
+.color label {
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.color label:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.63);
+}
+.color input:checked~label {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.63);
+}
+#color-1 {
+    animation: fadeInTop 0.4s ease 0.8s 1 normal forwards;
+}
+#color-2 {
+    animation: fadeInTop 0.9s ease 0.8s 1 normal forwards;
+}
+#color-3 {
+    animation: fadeInTop 1.3s ease 0.8s 1 normal forwards;
+}
+#color-dark {
+    animation: fadeInTop 1.8s ease 0.8s 1 normal forwards;
 }
 
 /* SIDEBAR */
@@ -26,11 +70,21 @@ body {
     border-right: 1px solid #fff;
     text-align: center;
     padding-top: 10px;
+    animation: SwingIn 1s ease 0s 1 normal forwards;
+}
+.logo {
+    margin-bottom: 20px;
 }
 .logo p {
     font-family: 'Lexend Tera', sans-serif;
     color: var(--text-color);
     font-size: 40px;
+    cursor: pointer;
+    display: inline;
+    transition: all 0.3s ease;
+}
+.logo p:hover {
+    opacity: 0.5;
 }
 .sb-links-ul {
     list-style: none;
@@ -75,12 +129,14 @@ body {
     max-height: 800px;
     z-index: 3;
     transition: all 0.3s ease;
+    animation: fadeInLeft1 1s ease 0s 1 normal none;
+    cursor: pointer;
 }
 .mc:hover {
-    transform: translate(-50%,-50%) rotate(-10deg);
+    transform: translate(-50%,-50%) scale(1.02);
 }
 .mc:hover~img {
-    transform: translate(-46%,-50%) rotate(-10deg);
+    transform: translate(-46%,-50%) scale(1.02);
 }
 .mc-shadow {
     position: absolute;
@@ -89,6 +145,7 @@ body {
     z-index: 1;
     transform: translate(-46%,-50%);
     transition: all 0.3s ease;
+    animation: fadeInLeft2 1s ease 0s 1 normal none;
 }
 .head {
     font-family: 'Lexend Tera';
@@ -104,14 +161,86 @@ body {
     top: 30%;
     left: 30%;
     z-index: 4;
+    animation: fadeInTop 1.8s ease 0.8s 1 normal forwards;
+    opacity: 0;
 }
 .head-2 {
     z-index: 2;
     top: 45%;
     left: 64%;
+    animation: fadeInRight 1.8s ease 0.8s 1 normal forwards;
+    opacity: 0;
 }
 .head-3 {
     z-index: 4;
     top: 60%;
     left: 28%;
+    animation: fadeInBottom 1.8s ease 0.8s 1 normal forwards;
+    opacity: 0;
+}
+@keyframes fadeInLeft1 {
+	0% {
+		opacity: 0;
+		transform: translate(-80%,-50%);
+	}
+
+	100% {
+		opacity: 1;
+	    transform: translate(-50%,-50%);
+	}
+}
+@keyframes fadeInLeft2 {
+	0% {
+		opacity: 0;
+		transform: translate(-80%,-50%);
+	}
+
+	100% {
+		opacity: 1;
+	    transform: translate(-46%,-50%);
+	}
+}
+@keyframes fadeInTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes fadeInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes SwingIn {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
